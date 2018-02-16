@@ -1,22 +1,12 @@
-$font-open: "Open Sans", sans-serif;
-
-html,
-body {
-  box-sizing: border-box;
-}
-
-* {
-  border: 1px solid black;
-  box-sizing: inherit;
-}
-
+$font-open: "Open Sans",
+sans-serif;
 body {
   background-image: url("/public/assets/tracer_overwatch.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: repeat-y;
+  background-size: contain;
 }
 
-#title {
+#header {
   font-family: $font-open;
   font-weight: 800;
   font-size: 40px;
@@ -54,6 +44,7 @@ li {
   padding: 10px;
   cursor: pointer;
   font-weight: bold;
+  border: 2px solid black;
 }
 
 li:hover {
@@ -63,28 +54,41 @@ li:hover {
 #mainContent {
   margin: 0 auto;
   width: 1200px;
-}
-
-#mainContent #container {
-  width: 100%;
-  height: 100%;
-  margin: auto;
-  border: 3px solid black;
-}
-
-#mainContent #square {
-  text-align: left;
-  width: 318px;
-  height: 390px;
-  background-color: white;
-  margin: 0 auto;
-  padding: 10px;
-  border: 3px solid black;
-}
-
-#mainContent #picture {
-  margin: 0 auto;
-  width: 50%;
-  height: 50%;
-  padding: 10px;
+  #content {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+  #square {
+    text-align: center;
+    width: 250px;
+    height: 250px;
+    background-color: white;
+    margin: 0 auto;
+    padding: 10px;
+    border: 3px solid black;
+  }
+  #square:hover {
+    background-color: rgb(255, 162, 210);
+  }
+  #picture {
+    margin: 0 auto;
+    width: 50%;
+    height: 50%;
+    padding: 10px;
+  }
+  #title {
+    text-align: center;
+    font-weight: bold;
+    font-family: $font-open;
+    color: rgb(255, 247, 8);
+  }
+  #link {
+    text-decoration: none;
+  }
+  #author {
+    text-align: center;
+    margin: auto;
+    padding: 2px;
+  }
 }

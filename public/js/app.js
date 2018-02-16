@@ -1,7 +1,7 @@
 console.log("SANITY FUCKS");
 // variable main body divs //
 const main = document.getElementById("mainContent");
-const menu = document.getElementById("sideMenu");
+const menu = document.getElementById("menu");
 
 // xhr requests for the menu reddits //
 getSideMenu(menu);
@@ -25,7 +25,7 @@ function makeElem(elem, label, inside) {
   return container;
 }
 
-// sideMenu content //
+// Menu content //
 function getSideMenu(menu) {
   const nav = makeElem("nav", "nav", " ");
   menu.appendChild(nav);
@@ -67,17 +67,10 @@ function getContent(data, info) {
     const square = makeElem("div", "square", " ");
     content.appendChild(square);
 
-    const picture = makeElem("img", "picture", " ");
+    const picture = makeElem("img", "picture");
 
-    if (
-      data.data &&
-      data.data.preview &&
-      data.data.preview.images[0] &&
-      data.data.preview.images[0].source &&
-      data.data.preview.images[0].source.url
-    ) {
-      const pictureUrl = data.data.preview.images[0].source.url;
-      picture.setAttribute("src", pictureUrl);
+    if (data.data.thumbnail !== "self") {
+      picture.setAttribute("src", data.data.thumbnail);
     } else {
       picture.setAttribute("src", "/public/assets/well-played.png");
     }
@@ -86,6 +79,16 @@ function getContent(data, info) {
     const titleInfo = data.data.title;
     const title = makeElem("div", "title", titleInfo);
     square.appendChild(title);
+
+    const authorInfo = data.data.author;
+    const author = makeElem("div", "author", authorInfo);
+    square.appendChild(author);
+
+    const dataLink = data.data.url;
+    const link = makeElem("a", "link", "Read More");
+    link.setAttribute("href", dataLink);
+    square.appendChild(link);
+
   });
   info.innerHTML = "";
   info.appendChild(content);
