@@ -49,13 +49,19 @@ li:hover {
   #mainContent #content {
     width: 100%;
     height: 100%;
-    margin: auto; }
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; }
   #mainContent #square {
+    margin: 12px 12px 12px 12px;
     text-align: center;
     width: 250px;
     height: 250px;
     background-color: white;
-    margin: 0 auto;
     padding: 10px;
     border: 3px solid black; }
   #mainContent #square:hover {
@@ -69,10 +75,9 @@ li:hover {
     text-align: center;
     font-weight: bold;
     font-family: "Open Sans", sans-serif;
-    color: #fff708; }
-  #mainContent #link {
-    text-decoration: none; }
+    color: #ff6600; }
   #mainContent #author {
     text-align: center;
     margin: auto;
-    padding: 2px; }
+    padding: 2px;
+    font-weight: bold; }

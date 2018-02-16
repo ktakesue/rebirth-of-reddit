@@ -4,7 +4,7 @@ const main = document.getElementById("mainContent");
 const menu = document.getElementById("menu");
 
 // xhr requests for the menu reddits //
-getSideMenu(menu);
+getSideMenu();
 const redditRequest = function (url) {
   const oReq = new XMLHttpRequest();
   oReq.addEventListener("load", function () {
@@ -26,7 +26,7 @@ function makeElem(elem, label, inside) {
 }
 
 // Menu content //
-function getSideMenu(menu) {
+function getSideMenu() {
   const nav = makeElem("nav", "nav", " ");
   menu.appendChild(nav);
 
